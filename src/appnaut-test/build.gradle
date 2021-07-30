@@ -1,0 +1,34 @@
+plugins {
+  id "io.micronaut.library" version "2.0.2"
+}
+
+version "1.0.0-SNAPSHOT"
+group "io.appnaut"
+
+repositories {
+  mavenCentral()
+}
+
+micronaut {
+  processing {
+    incremental(true)
+    annotations("io.appnaut.test.*")
+  }
+}
+
+dependencies {
+  runtimeOnly("ch.qos.logback:logback-classic")
+  runtimeOnly("com.h2database:h2")
+
+  runtimeOnly("io.micronaut.data:micronaut-data-tx")
+  runtimeOnly("io.micronaut.liquibase:micronaut-liquibase")
+  runtimeOnly("io.micronaut.sql:micronaut-hibernate-jpa")
+  runtimeOnly("io.micronaut.sql:micronaut-jdbc")
+}
+
+java {
+  sourceCompatibility = JavaVersion.toVersion("11")
+  targetCompatibility = JavaVersion.toVersion("11")
+}
+
+

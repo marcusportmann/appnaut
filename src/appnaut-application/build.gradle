@@ -1,0 +1,26 @@
+plugins {
+  id "io.micronaut.library" version "2.0.2"
+}
+
+version "1.0.0-SNAPSHOT"
+group "io.appnaut"
+
+repositories {
+  mavenCentral()
+}
+
+micronaut {
+  processing {
+    incremental(true)
+    annotations("io.appnaut.application.*")
+  }
+}
+
+dependencies {
+  implementation project(':appnaut-core')
+}
+
+java {
+  sourceCompatibility = JavaVersion.toVersion("11")
+  targetCompatibility = JavaVersion.toVersion("11")
+}

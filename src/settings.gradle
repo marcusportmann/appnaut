@@ -1,0 +1,6 @@
+include 'appnaut-application'
+include 'appnaut-core'
+include 'appnaut-jta'
+include 'appnaut-test'
+
+include 'demo'
